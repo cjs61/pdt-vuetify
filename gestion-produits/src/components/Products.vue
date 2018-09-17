@@ -3,23 +3,22 @@
 </template>
 
 <script>
-import API from '@/lib/API';
+    import API from '@/lib/API';
 
-export default {
-    mounted() {
-        this.load();
-    },
-    methods: {
-        load() {
-            API.getProducts()
-            .then((products) => {
-                console.log(products);
-            });
+    export default {
+        mounted() {
+            this.load();
         },
-    },
-};
+        methods: {
+            load() {
+                API.getProducts()
+                .then((products) => {
+                    console.log(products);
+                });
+            },
+        },
+    };
 </script>
 
 <style>
-
 </style>
