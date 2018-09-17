@@ -6,7 +6,7 @@
       app
     >
       <v-list dense>
-        <v-list-tile @click="">
+        <v-list-tile>
           <v-list-tile-action>
             <v-icon>vue_list</v-icon>
           </v-list-tile-action>

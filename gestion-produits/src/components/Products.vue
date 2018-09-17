@@ -4,6 +4,7 @@
 
 <script>
 import API from '@/lib/API';
+
 export default {
     mounted() {
         this.load();
@@ -11,7 +12,7 @@ export default {
     methods: {
         load() {
             API.getProducts()
-            .then(products => {
+            .then((products) => {
                 console.log(products);
             });
         },
@@ -22,5 +23,3 @@ export default {
 <style>
 
 </style>
-
-
