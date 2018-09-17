@@ -1,6 +1,6 @@
 <template lang="html">
-     <v-layout>
-    <v-flex xs12 sm6 offset-sm3>
+     <v-layout row>
+    <v-flex xs4 v-for="product in products" key: "product.id">
       <v-card>
         <v-img
           src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
@@ -27,15 +27,18 @@
     import API from '@/lib/API';
 
     export default {
+        data() {
+            return { 
+            products: [],
+            };
+    },
         mounted() {
             this.load();
         },
         methods: {
             load() {
                 API.getProducts()
-                .then((products) => {
-                    console.log(products);
-                });
+                .then(products => this.products = products);
             },
         },
     };
