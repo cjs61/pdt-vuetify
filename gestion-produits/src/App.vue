@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-      <v-navigation-drawer
+      <v-navigation-drawer class="red"
         v-model="drawer"
         fixed
         app
