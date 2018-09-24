@@ -3,19 +3,20 @@
      <v-layout row wrap>
     <v-flex xs4 v-for="product in products" :key="product.id">
       <v-card >
-       <v-img
+      <!-- <v-img
           src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
           aspect-ratio="2.75"
         ></v-img>
-        
-        <!-- <v-card-media src="/static/doc-images/cards.desert.jpg" height="200px">
-        </v-card-media>
         -->
+
+         <v-card-media :src="product.image" height="200px">
+        </v-card-media>
+        
 
         <v-card-title primary-title>
           <div>
-            <h3 class="headline mb-0">{{ product.title }}Kangaroo Valley Safari</h3>
-            <div>Located two hours south of Sydney in the <br>Southern Highlands of New South Wales, ...</div>
+            <h3 class="headline mb-0">{{ product.title }}</h3>
+            <div>Description :<br> {{ product.escription }}</div>
           </div>
         </v-card-title>
 
