@@ -10,4 +10,7 @@ export default {
         // fetch(API_URL)
         // .then(response => response.json);
     },
+   /* getProduct(id) {
+        return my_products('${API}/${id}'); 
+    }   */
 };
