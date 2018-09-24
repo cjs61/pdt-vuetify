@@ -22,8 +22,8 @@
             name: 'Product',
             params: {
               id: product.id
-              }
-              }"
+            }
+          }"
               flat
               color="orange">View</v-btn>
         </v-card-actions>
