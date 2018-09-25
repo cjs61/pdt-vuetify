@@ -8,10 +8,19 @@
                     <div>
                         <h3 class="headline mb-0">{{ product.title }}</h3>
                         <div>{{ product.description }}</div>
+                        <h4>€{{ product.price }}</h4>
+                        <small>{{ product.quantity }} in stock</small>
                     </div>
                 </v-card-title>
                 <v-card-actions>
-                    <v-btn flat color="orange">See</v-btn>       
+                    <v-btn
+                    :to=" {
+                        name: 'Edit',
+                        params: {
+                            id: product.id
+                        }
+                    }"
+                    flat color="primary">Edit</v-btn>       
                 </v-card-actions>
             </v-card>
          </v-flex>

@@ -3,8 +3,7 @@
       <v-navigation-drawer class="red"
         v-model="drawer"
         fixed
-        app
-      >
+        app>
         <v-list dense>
           <v-list-tile>
             <v-list-tile-action>
@@ -12,7 +11,18 @@
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>
-                <router-link :to="{ name: 'Products' }">Products</router-link></v-list-tile-title>
+                <router-link :to="{ name: 'Products' }">Products</router-link>
+            </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <v-list-tile>
+            <v-list-tile-action>
+              <v-icon>vue_list</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>
+                <router-link :to="{ name: 'Create' }">Create Products</router-link>
+            </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </v-list>

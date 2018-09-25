@@ -13,6 +13,8 @@
           <div>
             <h3 class="headline mb-0">{{ product.title }}</h3>
               <div>{{ product.description }}</div>
+              <h4>€{{ product.price }}</h4>
+              <small>{{ product.quantity }} in stock</small>
               </div>
           </div>
         </v-card-title>
