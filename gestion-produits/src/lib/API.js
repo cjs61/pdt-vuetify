@@ -7,10 +7,13 @@ export default {
     getProducts() {
         // return ezFetch(API_URL);
         return my_products;
-        // fetch(API_URL)
+        // sans la bibliothèque ez-fetch :
+        // return fetch(API_URL)
         // .then(response => response.json);
     },
     getProduct(id) {
         return my_products[id];
+        // return fetch ('${API_URL}/${id}')
+        // .then(response => response.json);
     }   
 };
