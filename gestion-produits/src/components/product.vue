@@ -19,15 +19,25 @@
 </template>
 
 <script>
+import API from '@/lib/API';
+
 export default {
     data () {
         return {
             product: {},
         };
     },
-  //  mounted(){
-       // console.log(this.$route.params);
-  //  }
+    mounted() {
+        const { id } = this.$route.params;
+        this.load(id);
+    },
+    methods: {
+        load(id) {
+            API.getProduct(id)
+          //  .then((product) => { this.product = product;}); 
+          this.product = API.getProduct(id);
+        },
+    },
 };
 </script>
 
