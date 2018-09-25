@@ -1,45 +1,38 @@
 <template>
     <v-layout>
         <v-flex xs12>
-            <form>
-        <v-text-field
-            v-model="name"
-            :error-messages="nameErrors"
-            :counter="10"
-            label="Name"
-            required
-            @input="$v.name.$touch()"
-            @blur="$v.name.$touch()">
-        </v-text-field>
-        <v-text-field
-            v-model="email"
-            :error-messages="emailErrors"
-            label="E-mail"
-            required
-            @input="$v.email.$touch()"
-            @blur="$v.email.$touch()">
-        </v-text-field>
-        <v-select
-            v-model="select"
-            :items="items"
-            :error-messages="selectErrors"
-            label="Item"
-            required
-            @change="$v.select.$touch()"
-            @blur="$v.select.$touch()">
-        </v-select>
-        <v-checkbox
-            v-model="checkbox"
-            :error-messages="checkboxErrors"
-            label="Do you agree?"
-            required
-            @change="$v.checkbox.$touch()"
-            @blur="$v.checkbox.$touch()">
-        </v-checkbox>
+            <v-form ref="form">
+                <v-text-field
+                    label="Title"
+                    v-model="product.title"
+                    required>
+                </v-text-field>
+                <v-text-field
+                    label="Description"
+                    v-model="product.description"
+                    multi-line>
+                </v-text-field>
+                <v-text-field
+                    label="Price"
+                    v-model="product.price"
+                    required
+                    prefix="€">
+                </v-text-field>
+                <v-text-field
+                    label="Quantity"
+                    v-model="product.quantity"
+                    required>
+                </v-text-field>
+                 <v-text-field
+                    label="Image"
+                    v-model="product.image"
+                    required>
+                </v-text-field>
+        
 
         <v-btn @click="submit">submit</v-btn>
         <v-btn @click="clear">clear</v-btn>
-    </form>
+    </v-form>
         </v-flex>
 </v-layout>
     
@@ -47,8 +40,26 @@
 
 <script>
 export default {
-    
-}
+    data() {
+        return {
+            product: {
+                title: '',
+                description: '',
+                price: 0,
+                quantity: 0,
+                image: '',
+            },
+        };
+    },
+    methods: {
+        submit() {
+            console.log(this.product);
+        },
+        clear() {
+            this.$refs.form.reset();
+        },
+    },
+};
 </script>
 
 <style>
