@@ -5,6 +5,7 @@
                 <v-text-field
                     label="Title"
                     v-model="product.title"
+                    :rules="titleRules"
                     required>
                 </v-text-field>
                 <v-text-field
@@ -15,12 +16,14 @@
                 <v-text-field
                     label="Price"
                     v-model="product.price"
+                    :rules="priceRules"
                     required
                     prefix="€">
                 </v-text-field>
                 <v-text-field
                     label="Quantity"
                     v-model="product.quantity"
+                    :rules="quantityRules"
                     required>
                 </v-text-field>
                  <v-text-field
@@ -49,6 +52,20 @@ export default {
                 quantity: 0,
                 image: '',
             },
+            titleRules: [(title) => {
+                if (title.trim() === '') return 'Title must not be empty'; 
+                return true;
+            }],
+            priceRules: [(price) => {
+                if (isNaN(price)) return 'price must be a valid number';
+                if (Number(price) <= 0) return 'price must be greater than 0€';
+                return true;
+            }],
+            quantityRules: [(quantity) => {
+                if (isNaN(quantity)) return 'quantity must be a valid number';
+                if (Number(quantity) < 0) return 'quantity must be greater than 0€';
+                return true;
+            }],
         };
     },
     methods: {
