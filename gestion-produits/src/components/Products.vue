@@ -1,6 +1,6 @@
 <template lang="html">
   <v-layout row wrap>
-    <v-flex xs4 v-for="product in products" :key="product.id">
+    <v-flex xs6 md4 v-for="product in products" :key="product.id">
       <v-card >
         <!--<v-img
           src="https://cdn.vuetifyjs.com/images/cards/desert.jpg"
