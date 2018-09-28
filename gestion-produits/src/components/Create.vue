@@ -1,7 +1,7 @@
 <template>
     <v-layout>
         <v-flex xs12>
-            <v-form ref="form">
+            <v-form ref="form" v-model="valid">
                 <v-text-field
                     label="Title"
                     v-model="product.title"
@@ -29,6 +29,7 @@
                  <v-text-field
                     label="Image"
                     v-model="product.image"
+                    :rules="imageRules"
                     required>
                 </v-text-field>
         
@@ -42,15 +43,18 @@
 </template>
 
 <script>
+import API from '@/lib/API';
 export default {
     data() {
         return {
+            valid: true,
             product: {
                 title: '',
                 description: '',
                 price: 0,
                 quantity: 0,
                 image: '',
+                
             },
             titleRules: [(title) => {
                 if (title.trim() === '') return 'Title must not be empty'; 
@@ -66,11 +70,23 @@ export default {
                 if (Number(quantity) < 0) return 'quantity must be greater than 0€';
                 return true;
             }],
+            imageRules: [(image) => {
+                if (image.trim() === '') return 'Image must not be empty'; 
+                return true;
+            }],
         };
     },
     methods: {
         submit() {
-            console.log(this.product);
+            if (this.valid) {
+                this.product.quantity = Number(this.product.quantity);
+               
+               API.createProduct(this.product);
+   
+                
+                
+            }
+            
         },
         clear() {
             this.$refs.form.reset();
