@@ -15,5 +15,9 @@ export default {
         return my_products[id];
         // return fetch ('${API_URL}/${id}')
         // .then(response => response.json);
+    },
+    createProduct(product) {
+        return my_products.push(product);
+        
     }   
 };
