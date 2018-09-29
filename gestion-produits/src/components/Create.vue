@@ -44,6 +44,7 @@
 
 <script>
 import API from '@/lib/API';
+import my_products from '@/lib/products.js';
 export default {
     data() {
         return {
@@ -81,10 +82,17 @@ export default {
             if (this.valid) {
                 this.product.quantity = Number(this.product.quantity);
                
-               API.createProduct(this.product);
-   
-                
-                
+               API.createProduct(this.product)
+
+                // pour aller au produit qui vient d'être créé je prends la propriété id à partir de cet objet : {id} pour le réutiliser dans params:
+                .then(({ id }) => { 
+                    this.$route.push({
+                        name: 'Product',
+                        params: {
+                            id,
+                        },
+                    });
+                });
             }
             
         },
