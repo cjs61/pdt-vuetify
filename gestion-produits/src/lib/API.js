@@ -18,6 +18,5 @@ export default {
     },
     createProduct(product) {
         return my_products.push(product);
-        
     }   
 };
