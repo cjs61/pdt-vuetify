@@ -20,7 +20,7 @@
         </v-card-title>
         <v-card-actions>
           <v-btn 
-          :to="{
+          :to=" {
             name: 'Product',
             params: {
               id: product.id
@@ -36,26 +36,24 @@
 </template>
 
 <script>
-    import API from '@/lib/API';
+import API from '@/lib/API';
 
-    export default {
-        data() {
-            return { 
-            products: [
-            ],
-            };
-    },
-        mounted() {
-            this.load();
-        },
-        methods: {
-            load() {
-                this.products = API.getProducts();
-                // .then(products => this.products = products);
-            
-            },
-        },
+export default {
+  data() {
+    return { 
+      products: [],
     };
+  },
+  mounted() {
+    this.load();
+  },
+  methods: {
+    load() {
+      this.products = API.getProducts();
+      // .then(products => this.products = products);
+    },
+  },
+};
 </script>
 
 <style>

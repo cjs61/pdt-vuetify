@@ -45,11 +45,11 @@
 </template>
 
 <script>
-  export default {
-    name: 'App',
-    data() {
-      return { 
-      drawer: true,
+export default {
+  name: 'App',
+  data() {
+    return { 
+    drawer: true,
     };
   },
   };
