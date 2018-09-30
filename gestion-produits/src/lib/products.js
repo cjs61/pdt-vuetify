@@ -1,6 +1,6 @@
 my_products = [{
   title: 'Macbook Pro',
-  description: 'A laptop for cool people.',
+  description: 'A laptop for cool people!',
   price: 999.99,
   quantity: 10,
   image: 'https://i.imgur.com/hVOxDYK.jpg',
