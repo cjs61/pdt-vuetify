@@ -15,11 +15,10 @@
               <div>{{ product.description }}</div>
               <h4>€{{ product.price }}</h4>
               <small>{{ product.quantity }} in stock</small>
-              </div>
           </div>
         </v-card-title>
         <v-card-actions>
-          <v-btn 
+          <v-btn
           :to=" {
             name: 'Product',
             params: {
@@ -40,7 +39,7 @@ import API from '@/lib/API';
 
 export default {
   data() {
-    return { 
+    return {
       products: [],
     };
   },
